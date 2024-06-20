@@ -1,6 +1,9 @@
 import axios from "axios";
 import express from "express";
 import cors from "cors";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 
@@ -34,6 +37,6 @@ app.get("/", async (request, response) => {
   }
 });
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
+app.listen(process.env.PORT || 3333, () => {
+  console.log("Server is running on port 3333");
 });
