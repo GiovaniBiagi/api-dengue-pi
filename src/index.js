@@ -1,5 +1,5 @@
 import axios from "axios";
-import express, { Request, Response } from "express";
+import express from "express";
 import cors from "cors";
 
 const app = express();
@@ -17,7 +17,7 @@ const searchParams = new URLSearchParams({
 app.use(cors());
 app.use(express.json());
 
-app.get("/", async (request: Request, response: Response) => {
+app.get("/", async (request, response) => {
   try {
     const fetchResponse = await axios.get(
       `https://info.dengue.mat.br/api/alertcity?${searchParams}`,
