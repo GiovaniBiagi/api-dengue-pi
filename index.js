@@ -38,7 +38,7 @@ app.get("/", async (request, response) => {
   }
 });
 
-app.get("/newsletter", async (request, response) => {
+app.post("/newsletter", async (request, response) => {
   const { email } = request.query;
 
   try {
